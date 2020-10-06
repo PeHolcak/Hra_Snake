@@ -1,0 +1,22 @@
+﻿<Window x:Class="snake.nastaveni"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:snake"
+        mc:Ignorable="d"
+        Title="nastaveni" Height="216" Width="377">
+    <Grid Margin="40" Width="200">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"></RowDefinition>
+            <RowDefinition Height="30"></RowDefinition>
+            <RowDefinition Height="30"></RowDefinition>
+        </Grid.RowDefinitions>
+        <WrapPanel Grid.Row="0">
+            <Label>Rychlost hada:</Label>
+            <TextBlock Width="100" VerticalAlignment="Center" Text="{Binding ElementName=rychlostHadaSlider, Path=Value, Mode=OneWay}"></TextBlock>
+        </WrapPanel>
+        <Slider IsSnapToTickEnabled="True" Width="200" HorizontalAlignment="Left" Grid.Row="1" Name="rychlostHadaSlider" Minimum="0" Maximum="10"></Slider>
+        <Button Grid.Row="2" Background="{x:Null}" BorderThickness="0" Click="ulozitNastaveni_Click">Uložit</Button>
+    </Grid>
+</Window>
